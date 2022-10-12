@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 
-const PORT = 4000
+const PORT = process.env.PORT;
 
 //setting up server
 app.listen(PORT, () => {
@@ -20,6 +20,12 @@ app.listen(PORT, () => {
 
 puppeteer.use(StealthPlugin());
 puppeteer.use(RecaptchaPlugin());
+
+
+
+app.get('/', (req,res) => {
+    res.status(200).send({msg: 'Hello from the backend'})
+})
 
 
 app.post('/login', async (req, res) => {
