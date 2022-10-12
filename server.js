@@ -4,6 +4,9 @@ import puppeteer from 'puppeteer-extra';
 import UserAgent from 'user-agents';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import RecaptchaPlugin from 'puppeteer-extra-plugin-recaptcha';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(express.json());
